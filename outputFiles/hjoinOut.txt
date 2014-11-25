@@ -1,0 +1,1 @@
+Joining tables/parts.txt with tables/odetails.txt

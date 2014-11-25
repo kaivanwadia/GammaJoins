@@ -1,23 +1,26 @@
 package gammajoins;
 
+import gammaSupport.Relation;
 import gammaSupport.ThreadList;
 import gammaSupport.Tuple;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import basicConnector.Connector;
 import basicConnector.ReadEnd;
 import basicConnector.WriteEnd;
 
-public class Hjoin extends Thread {
+public class HJoin extends Thread {
 	ReadEnd a,b;
 	WriteEnd out;
 	int aCol, bCol;
-	public Hjoin(ReadEnd a, ReadEnd b, int aCol, int bCol, WriteEnd out)
+	public HJoin(Connector a, Connector b, int aCol, int bCol, Connector out)
 	{
-		this.a = a;
-		this.b = b;
-		this.out = out;
+		this.a = a.getReadEnd();
+		this.b = b.getReadEnd();
+		this.out = out.getWriteEnd();
+		out.setRelation(Relation.dummy);
 		this.aCol = aCol;
 		this.bCol = bCol;
 		
@@ -35,13 +38,14 @@ public class Hjoin extends Thread {
 					list.add(tuple);
 					mapA.put(tuple.get(aCol), list);
 				}else{
-					ArrayList<Tuple> list = mapA.get(aCol);
+					ArrayList<Tuple> list = mapA.get(tuple.get(aCol));
 					list.add(tuple);
 					mapA.put(tuple.get(aCol), list);
 				}
+				// Broken right here..........
 				tuple = a.getNextTuple();
 			}
-			
+			System.out.println("Here");
 			tuple = b.getNextTuple();
 			while(tuple != null){
 				if(mapA.get(tuple.get(bCol)) != null){
@@ -51,12 +55,13 @@ public class Hjoin extends Thread {
 					}
 				}
 				tuple = b.getNextTuple();
+				System.out.println("Looping here!");
 			}
-			
+			out.close();
 		}
 		catch (Exception e)
 		{
-			
+			System.out.println(e);
 		}
 		
 		

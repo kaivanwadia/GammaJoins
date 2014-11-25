@@ -2,14 +2,15 @@ package gammajoins;
 
 import gammaSupport.ThreadList;
 import gammaSupport.Tuple;
+import basicConnector.Connector;
 import basicConnector.ReadEnd;
 
 public class Print extends Thread {
 	
 	public ReadEnd input;
-	public Print(ReadEnd in)
+	public Print(Connector in)
 	{
-		input = in;
+		input = in.getReadEnd();
 		ThreadList.add(this);
 	}
 	

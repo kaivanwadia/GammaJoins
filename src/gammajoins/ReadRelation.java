@@ -38,7 +38,7 @@ public class ReadRelation extends Thread {
 			String input;
 			while (true) {
 				input = in.readLine();
-				if (input == null) {
+				if (input == null || input.trim().equals("")) {
 					break;
 				}
 				if (input.startsWith("---")) {
