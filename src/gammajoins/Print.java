@@ -1,19 +1,21 @@
 package gammajoins;
 
+import gammaSupport.ReportError;
 import gammaSupport.ThreadList;
 import gammaSupport.Tuple;
+import basicConnector.Connector;
 import basicConnector.ReadEnd;
 
 public class Print extends Thread {
 	
 	public ReadEnd input;
-	public Print(ReadEnd in)
+	public Print(Connector in)
 	{
-		input = in;
+		input = in.getReadEnd();
 		ThreadList.add(this);
 	}
 	
-	public void run(){
+	public void run() {
 		try{
 			Tuple tuple = input.getNextTuple();
 			while(tuple != null)
@@ -23,7 +25,7 @@ public class Print extends Thread {
 			}
 		}catch (Exception e)
 		{
-			
+			ReportError.msg(this, e);
 		}
 	}
 
