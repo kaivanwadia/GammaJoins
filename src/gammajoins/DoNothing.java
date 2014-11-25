@@ -1,5 +1,6 @@
 package gammajoins;
 
+import gammaSupport.ThreadList;
 import gammaSupport.Tuple;
 import basicConnector.Connector;
 import basicConnector.ReadEnd;
@@ -12,6 +13,7 @@ public class DoNothing extends Thread {
 	public DoNothing(ReadEnd read, WriteEnd write){
 		this.read = read;
 		this.write = write;
+		ThreadList.add(this);
 	}
 	
 	public void run()

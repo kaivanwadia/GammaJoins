@@ -1,5 +1,6 @@
 package gammajoins;
 
+import gammaSupport.ThreadList;
 import gammaSupport.Tuple;
 import basicConnector.ReadEnd;
 import basicConnector.WriteEnd;
@@ -9,6 +10,7 @@ public class Sink extends Thread {
 	ReadEnd read;
 	public Sink(ReadEnd read){
 		this.read = read;
+		ThreadList.add(this);
 	}
 	
 	public void run()

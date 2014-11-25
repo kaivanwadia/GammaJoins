@@ -1,5 +1,6 @@
 package gammajoins;
 
+import gammaSupport.ThreadList;
 import gammaSupport.Tuple;
 import basicConnector.ReadEnd;
 
@@ -9,6 +10,7 @@ public class Print extends Thread {
 	public Print(ReadEnd in)
 	{
 		input = in;
+		ThreadList.add(this);
 	}
 	
 	public void run(){
