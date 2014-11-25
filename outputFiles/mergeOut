@@ -1,0 +1,44 @@
+MERGING : tables/client.txt
+
+6#CR56#Aline#Stewart#0141-848-1825#Flat#350#
+6#CR76#John#Kay#0207-774-5632#Flat#425#
+6#CR62#Mary#Tregear#01224-196720#Flat#600#
+6#CR74#Mike#Richie#01475-392178#House#750#
+-----------------------------
+MERGING : tables/viewing.txt
+
+4#CR56#PA14#24-MAY-04#too_small#
+4#CR76#PG4#20-APR-04#too_remote#
+4#CR62#PA14#14-MAY-04#no_dining_room#
+4#CR56#PG4#26-MAY-04#_#
+4#CR56#PG36#28-APR-04#_#
+-----------------------------
+MERGING : tables/orders.txt
+
+5#1023#3333#1000#20-JUN-97#_#
+5#1020#1111#1000#10-DEC-94#12-DEC-94#
+5#1021#1111#1000#12-JAN-95#15-JAN-95#
+5#1022#2222#1001#13-FEB-95#20-FEB-95#
+-----------------------------
+MERGING : tables/parts.txt
+
+5#10506#Land_Before_Time_I#200#19.99#20#
+5#10507#Land_Before_Time_II#156#19.99#20#
+5#10508#Land_Before_Time_III#190#19.99#20#
+5#10509#Land_Before_Time_IV#60#19.99#20#
+5#10601#Sleeping_Beauty#300#24.99#20#
+5#10701#When_Harry_Met_Sally#120#19.99#30#
+5#10900#Dr._Zhivago#100#24.99#30#
+5#10800#Dirty_Harry#140#14.99#30#
+-----------------------------
+MERGING : tables/odetails.txt
+
+3#1023#10800#1#
+3#1020#10506#1#
+3#1021#10601#4#
+3#1022#10601#1#
+3#1023#10900#1#
+3#1020#10507#1#
+3#1022#10701#1#
+3#1020#10508#2#
+3#1020#10509#3#

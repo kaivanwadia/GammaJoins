@@ -10,9 +10,9 @@ public class DoNothing extends Thread {
 
 	ReadEnd read;
 	WriteEnd write;
-	public DoNothing(ReadEnd read, WriteEnd write){
-		this.read = read;
-		this.write = write;
+	public DoNothing(Connector read, Connector write){
+		this.read = read.getReadEnd();
+		this.write = write.getWriteEnd();
 		this.write.setRelation(read.getRelation());
 		ThreadList.add(this);
 	}

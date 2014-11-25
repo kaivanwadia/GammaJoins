@@ -6,18 +6,26 @@ import basicConnector.Connector;
 
 public class Main {
 	public static void main(String args[]) throws Exception {
+		String fileName = "tables/client.txt";
+		int joinKey = 0;
 		ThreadList.init();
-		Connector readT1ToBloom = new Connector("readT1ToBloom");
-		ReadRelation rRelation1 = new ReadRelation("tables/orders.txt", readT1ToBloom);
-		Connector readT2ToBloomFilter = new Connector("readT2ToBloomFilter");
-		ReadRelation rRelation2 = new ReadRelation("tables/odetails.txt", readT2ToBloomFilter);
-		Connector bloomToPrintTuple = new Connector("bloomTout1");
-		Connector bloomToPrintMap = new Connector("bloomBmapout1");
-		Bloom bloom1 = new Bloom(readT1ToBloom, bloomToPrintTuple, bloomToPrintMap, 0);
-		Connector bloomFilterToPrint = new Connector("bloomFilterToPrint");
-		BloomFilter bloomFilter1 = new BloomFilter(readT2ToBloomFilter, bloomToPrintMap, bloomFilterToPrint, 0);
-		Sink sinkT1Tuple = new Sink(bloomToPrintTuple);
-		Print printTuples = new Print(bloomFilterToPrint);
-		ThreadList.run(printTuples);
+		System.out.println("Split 1 : " + fileName);
+		Connector readRToBloom = new Connector("readRToBloom");
+		Connector bloomToSinkTuple = new Connector("bloomToSinkTuple");
+		Connector bloomToSplitMap = new Connector("bloomBmapout1");
+		Connector splitMToOut1 = new Connector("splitMToOut1");
+		Connector splitMToOut2 = new Connector("splitMToOut2");
+		Connector splitMToOut3 = new Connector("splitMToOut3");
+		Connector splitMToOut4 = new Connector("splitMToOut4");
+		ReadRelation rRelation = new ReadRelation(fileName, readRToBloom);
+		Bloom bloom1 = new Bloom(readRToBloom, bloomToSinkTuple, bloomToSplitMap, 0);
+		SplitM splitM = new SplitM(bloomToSplitMap, splitMToOut1, splitMToOut2, splitMToOut3, splitMToOut4);
+		Sink sinkTuples = new Sink(bloomToSinkTuple); 
+		PrintMap printMap2 = new PrintMap(splitMToOut2);
+		SinkM sink1 = new SinkM(splitMToOut1);
+//		SinkM sink2 = new SinkM(splitMToOut2);
+		SinkM sink3 = new SinkM(splitMToOut3);
+		SinkM sink4 = new SinkM(splitMToOut4);
+		ThreadList.run(printMap2);
 	}
 }
