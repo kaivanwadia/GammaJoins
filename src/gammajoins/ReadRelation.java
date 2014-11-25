@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
+import basicConnector.Connector;
 import basicConnector.WriteEnd;
 
 public class ReadRelation extends Thread {
@@ -16,7 +17,7 @@ public class ReadRelation extends Thread {
 	BufferedReader in;
 	WriteEnd out;
 	Relation relation;
-	public ReadRelation (String fileName, WriteEnd out) {
+	public ReadRelation (String fileName, Connector out) {
 		try {
 			in = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
 			String input = in.readLine();
@@ -25,7 +26,7 @@ public class ReadRelation extends Thread {
 			for (int i = 0; i < fields.length; i++) {
 				relation.addField(fields[i]);
 			}
-			this.out = out;
+			this.out = out.getWriteEnd();
 			this.out.setRelation(relation);
 		} catch (Exception e) {
 			ReportError.msg(e.getMessage());
@@ -38,7 +39,7 @@ public class ReadRelation extends Thread {
 			String input;
 			while (true) {
 				input = in.readLine();
-				if (input == null) {
+				if (input == null || input.trim().equals("")) {
 					break;
 				}
 				if (input.startsWith("---")) {
@@ -48,6 +49,7 @@ public class ReadRelation extends Thread {
 				out.putNextTuple(tuple);
 			}
 			in.close();
+			out.close();
 		} catch (Exception e) {
 			ReportError.msg(this.getClass().getName() + e);
 		}

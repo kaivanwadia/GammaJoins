@@ -13,6 +13,7 @@ public class DoNothing extends Thread {
 	public DoNothing(ReadEnd read, WriteEnd write){
 		this.read = read;
 		this.write = write;
+		this.write.setRelation(read.getRelation());
 		ThreadList.add(this);
 	}
 	

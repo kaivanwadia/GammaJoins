@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 import gammaSupport.ThreadList;
 import gammajoins.Bloom;
 import gammajoins.Print;
+import gammajoins.PrintMap;
 import gammajoins.ReadRelation;
+import gammajoins.Sink;
 
 import org.junit.Test;
 
@@ -15,18 +17,34 @@ import basicConnector.WriteEnd;
 public class BloomTest {
 
 	@Test
-	public void bloomTest1() throws Exception {
+	public void bloomTestTupleOut1() throws Exception {
 		ThreadList.init();
 		String fileName = "tables/client.txt";
-		Connector c = new Connector("rr1");
-		ReadRelation rRelation = new ReadRelation(fileName, c.getWriteEnd());
-		Connector bloomTupleOut1 = new Connector("bloomTout1");
-		Connector bloomBMapOut1 = new Connector("bloomBmapout1");
-		Bloom bloom1 = new Bloom(c, bloomTupleOut1, bloomBMapOut1, 0);
-		Print print = new Print(bloomTupleOut1);
-		Print print1 = new Print(bloomBMapOut1);
-		Utility.redirectStdOut("outputFiles/readRelationOut");
-		ThreadList.run(print1);
-		Utility.validate("outputFiles/readRelationOut", "correctOutput/readRelationOutput", true);
+		Connector readRToBloom = new Connector("rr1");
+		Connector bloomToPrintTuple = new Connector("bloomTout1");
+		Connector bloomToPrintMap = new Connector("bloomBmapout1");
+		ReadRelation rRelation = new ReadRelation(fileName, readRToBloom);
+		Bloom bloom1 = new Bloom(readRToBloom, bloomToPrintTuple, bloomToPrintMap, 0);
+		Sink sinkMap = new Sink(bloomToPrintMap);
+		Print printTuples = new Print(bloomToPrintTuple);
+		Utility.redirectStdOut("outputFiles/bloomBoxTupleOut");
+		ThreadList.run(printTuples);
+		Utility.validate("outputFiles/bloomBoxTupleOut", "correctOutput/bloomBoxTupleCOutput", true);
+	}
+	
+	@Test
+	public void bloomTestMapOut1() throws Exception {
+		ThreadList.init();
+		String fileName = "tables/client.txt";
+		Connector readRToBloom = new Connector("rr1");
+		Connector bloomToPrintTuple = new Connector("bloomTout1");
+		Connector bloomToPrintMap = new Connector("bloomBmapout1");
+		ReadRelation rRelation = new ReadRelation(fileName, readRToBloom);
+		Bloom bloom1 = new Bloom(readRToBloom, bloomToPrintTuple, bloomToPrintMap, 0);
+		Sink sinkTuples = new Sink(bloomToPrintTuple); 
+		PrintMap printMap = new PrintMap(bloomToPrintMap);
+		Utility.redirectStdOut("outputFiles/bloomBoxMapOut");
+		ThreadList.run(printMap);
+		Utility.validate("outputFiles/bloomBoxMapOut", "correctOutput/bloomBoxMapCOutput", true);
 	}
 }

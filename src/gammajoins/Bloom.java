@@ -3,6 +3,7 @@ package gammajoins;
 import gammaSupport.BMap;
 import gammaSupport.Relation;
 import gammaSupport.ReportError;
+import gammaSupport.ThreadList;
 import gammaSupport.Tuple;
 import basicConnector.Connector;
 import basicConnector.ReadEnd;
@@ -19,8 +20,9 @@ public class Bloom extends Thread {
 		this.tupleOut = tOut.getWriteEnd();
 		this.joinCol = joinCol;
 		this.bMapOut = bOut.getWriteEnd();
-		this.tupleOut.setRelation(Relation.dummy);
+		this.tupleOut.setRelation(in.getRelation());
 		this.bMapOut.setRelation(Relation.dummy);
+		ThreadList.add(this);
 	}
 	
 	public void run() {
