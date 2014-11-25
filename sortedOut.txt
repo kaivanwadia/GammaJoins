@@ -1,49 +1,19 @@
---------------------------------
---------------------------------
---------------------------------
---------------------------------
-SPLITTING MAP : tables/client.txt on 0
-SPLITTING MAP : tables/odetails.txt on 1
-SPLITTING MAP : tables/orders.txt on 0
-SPLITTING MAP : tables/parts.txt on 0
-SPLITTING MAP : tables/viewing.txt on 0
-Split 1 : tables/client.txt
-Split 1 : tables/odetails.txt
-Split 1 : tables/orders.txt
-Split 1 : tables/parts.txt
-Split 1 : tables/viewing.txt
-Split 2 : tables/client.txt
-Split 2 : tables/odetails.txt
-Split 2 : tables/orders.txt
-Split 2 : tables/parts.txt
-Split 2 : tables/viewing.txt
-Split 3 : tables/client.txt
-Split 3 : tables/odetails.txt
-Split 3 : tables/orders.txt
-Split 3 : tables/parts.txt
-Split 3 : tables/viewing.txt
-Split 4 : tables/client.txt
-Split 4 : tables/odetails.txt
-Split 4 : tables/orders.txt
-Split 4 : tables/parts.txt
-Split 4 : tables/viewing.txt
-ffffffffffffffffffffffffffff
-ffffffffffffffffffffffffffff
-ffffffffffffffffffffffftffff
-ffffffffffffffffffffffftffff
-fffffffffffffffffffffftfffff
-fffffffffffffffffffffftfffff
-ffffffffffffffffffffftffffff
-fffffffffffffffffffftfffffff
-ffffffffffffffftffffffffffff
-ffffffffffffffftffffffffffff
-ffffffffffffffftffffffffffff
-ffffffffffffffftffffffffffff
-fffffffffftttfffffffffffffff
-ffffffftffffffffffffffffffff
-ffffffftffffffffffffffffffff
-ffftffffffffffffffffffffffff
-ffftffffffffffffffffffffffff
-fftfffffffffffffffffffffffff
-fftffftfffffffffffffffffffff
-ftfftfffffffffffffffffffffff
+
+
+
+
+
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+MERGING MAP : tables/client.txt on 0
+MERGING MAP : tables/odetails.txt on 1
+MERGING MAP : tables/orders.txt on 0
+MERGING MAP : tables/parts.txt on 0
+MERGING MAP : tables/viewing.txt on 0
+ffftffftffffffftffffffftffff
+fftfffffffffffftfffffftfffff
+fftffftfffffffftfffffftfffff
+ftfftffffftttfffffffttffffff
+ftfftffffftttfffffffttffffff
