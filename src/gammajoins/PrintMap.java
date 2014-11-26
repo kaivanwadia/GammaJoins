@@ -17,7 +17,12 @@ public class PrintMap extends Thread {
 	public void run() {
 		try {
 			String inputMap = this.in.getNextString();
-			System.out.println(inputMap);
+			for(int i = 0; i < BMap.splitLen; i++){
+				for(int j = 0; j < BMap.mapSize; j++){
+					System.out.print(inputMap.charAt(i*BMap.mapSize + j));
+				}
+				System.out.println();
+			}
 		} catch (Exception e) {
 			ReportError.msg(this, e);
 		}

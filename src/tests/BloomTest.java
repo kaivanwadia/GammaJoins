@@ -1,18 +1,17 @@
 package tests;
 
-import static org.junit.Assert.*;
 import gammaSupport.ThreadList;
 import gammajoins.Bloom;
 import gammajoins.Print;
 import gammajoins.PrintMap;
 import gammajoins.ReadRelation;
 import gammajoins.Sink;
+import gammajoins.SinkM;
 
 import org.junit.Test;
 
 import RegTest.Utility;
 import basicConnector.Connector;
-import basicConnector.WriteEnd;
 
 public class BloomTest {
 
@@ -25,7 +24,7 @@ public class BloomTest {
 		Connector bloomToPrintMap = new Connector("bloomBmapout1");
 		ReadRelation rRelation = new ReadRelation(fileName, readRToBloom);
 		Bloom bloom1 = new Bloom(readRToBloom, bloomToPrintTuple, bloomToPrintMap, 0);
-		Sink sinkMap = new Sink(bloomToPrintMap);
+		SinkM sinkMap = new SinkM(bloomToPrintMap);
 		Print printTuples = new Print(bloomToPrintTuple);
 		Utility.redirectStdOut("outputFiles/bloomBoxTupleOut");
 		ThreadList.run(printTuples);

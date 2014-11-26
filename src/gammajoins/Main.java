@@ -23,6 +23,7 @@ public class Main {
 		MergeM mergeM = new MergeM(splitMToMerge1, splitMToMerge2, splitMToMerge3, splitMToMerge4, mergeMToPrint);
 		Sink sinkTuples = new Sink(bloomToSinkTuple);
 		PrintMap printMap = new PrintMap(mergeMToPrint);
+//		Print print = new Print(bloomToSinkTuple);
 		ThreadList.run(printMap);
 	}
 }
