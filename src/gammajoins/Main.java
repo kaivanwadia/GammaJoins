@@ -13,7 +13,7 @@ public class Main {
 		Connector mergeOut = new Connector("bloomMergeOut");
 		Connector mmergeOut = new Connector("bloomMMergeOut");
 		ReadRelation rRelation = new ReadRelation(fileName, readIn);
-		MapReduceBloom hjf = new MapReduceBloom(readIn, joinKey, mergeOut, mmergeOut);
+		MapReduceBloom hjf = new MapReduceBloom(readIn, joinKey, mergeOut, mmergeOut); 
 		
 //		Connector readRToBloom = new Connector("readRToBloom");
 //		Connector bloomToSinkTuple = new Connector("bloomToSinkTuple");
