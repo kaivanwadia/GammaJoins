@@ -1,19 +1,1 @@
-
-
-
-
-
------------------------------
------------------------------
------------------------------
------------------------------
-MERGING MAP : tables/client.txt on 0
-MERGING MAP : tables/odetails.txt on 1
-MERGING MAP : tables/orders.txt on 0
-MERGING MAP : tables/parts.txt on 0
-MERGING MAP : tables/viewing.txt on 0
-ffftffftffffffftffffffftffff
-fftfffffffffffftfffffftfffff
 fftffftfffffffftfffffftfffff
-ftfftffffftttfffffffttffffff
-ftfftffffftttfffffffttffffff

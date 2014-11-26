@@ -1,5 +1,6 @@
 package gammajoins;
 
+import gammaSupport.Relation;
 import gammaSupport.ReportError;
 import gammaSupport.ThreadList;
 import gammaSupport.Tuple;
