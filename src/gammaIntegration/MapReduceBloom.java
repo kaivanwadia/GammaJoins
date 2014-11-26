@@ -10,22 +10,22 @@ import basicConnector.Connector;
 
 public class MapReduceBloom extends ArrayConnectors{
 	
-	public MapReduceBloom(Connector in1, int joinKey, Connector mergeOut, Connector mmergeOut){
+	
+	public MapReduceBloom(Connector aTuplesIn, int joinKey, Connector aTuplesOut, Connector mapOut){
 		
-		Connector[] outs = ArrayConnectors.initConnectorArray("out");
-		Connector[] bloomT = ArrayConnectors.initConnectorArray("bloomT");
-		Connector[] bloomM = ArrayConnectors.initConnectorArray("bloomM");
+		Connector[] hSplitToBloom = ArrayConnectors.initConnectorArray("out");
+		Connector[] bloomToMerge = ArrayConnectors.initConnectorArray("bloomT");
+		Connector[] bloomToMapMerge = ArrayConnectors.initConnectorArray("bloomM");
 		
 		
-		HSplit hSplit = new HSplit(in1, outs[0], outs[1], outs[2], outs[3], joinKey);
+		HSplit hSplit = new HSplit(aTuplesIn, hSplitToBloom[0], hSplitToBloom[1], hSplitToBloom[2], hSplitToBloom[3], joinKey);
 		
-		Bloom b1 = new Bloom(outs[0], bloomT[0], bloomM[0], joinKey);
-		Bloom b2 = new Bloom(outs[1], bloomT[1], bloomM[1], joinKey);
-		Bloom b3 = new Bloom(outs[2], bloomT[2], bloomM[2], joinKey);
-		Bloom b4 = new Bloom(outs[3], bloomT[3], bloomM[3], joinKey);
+		Bloom b1 = new Bloom(hSplitToBloom[0], bloomToMerge[0], bloomToMapMerge[0], joinKey);
+		Bloom b2 = new Bloom(hSplitToBloom[1], bloomToMerge[1], bloomToMapMerge[1], joinKey);
+		Bloom b3 = new Bloom(hSplitToBloom[2], bloomToMerge[2], bloomToMapMerge[2], joinKey);
+		Bloom b4 = new Bloom(hSplitToBloom[3], bloomToMerge[3], bloomToMapMerge[3], joinKey);
 		
-		Merge merge = new Merge(bloomT[0], bloomT[1], bloomT[2], bloomT[3], mergeOut);
-		MergeM mmerge = new MergeM(bloomM[0], bloomM[1], bloomM[2], bloomM[3], mmergeOut);
-		
+		Merge merge = new Merge(bloomToMerge[0], bloomToMerge[1], bloomToMerge[2], bloomToMerge[3], aTuplesOut);
+		MergeM mmerge = new MergeM(bloomToMapMerge[0], bloomToMapMerge[1], bloomToMapMerge[2], bloomToMapMerge[3], mapOut);
 	}
 }

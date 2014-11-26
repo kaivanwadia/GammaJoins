@@ -9,23 +9,21 @@ import basicConnector.Connector;
 
 public class MapReduceBFilter extends ArrayConnectors {
 	
-	public MapReduceBFilter(Connector mIn, Connector bIn, int joinKey, Connector bOut){
-		Connector[] maps = ArrayConnectors.initConnectorArray("map");
-		Connector[] bTuples = ArrayConnectors.initConnectorArray("bTuples");
+	public MapReduceBFilter(Connector mapIn, Connector bTuplesIn, int joinKey, Connector bTuplesOut) {
+		Connector[] mapsToBFilter = ArrayConnectors.initConnectorArray("map");
+		Connector[] bTuplesToBFilter = ArrayConnectors.initConnectorArray("bTuples");
 		
-		SplitM splitM = new SplitM(mIn, maps[0], maps[1], maps[2], maps[3]);
-		HSplit splitB = new HSplit(bIn, bTuples[0], bTuples[1], bTuples[2], bTuples[3], joinKey);
+		SplitM splitM = new SplitM(mapIn, mapsToBFilter[0], mapsToBFilter[1], mapsToBFilter[2], mapsToBFilter[3]);
+		HSplit splitB = new HSplit(bTuplesIn, bTuplesToBFilter[0], bTuplesToBFilter[1], bTuplesToBFilter[2], bTuplesToBFilter[3], joinKey);
 		
-		Connector[] bFilterOut = ArrayConnectors.initConnectorArray("bFilterOut");
+		Connector[] bFilterToMerge = ArrayConnectors.initConnectorArray("bFilterOut");
 		
-		BloomFilter bFilter0 = new BloomFilter(bTuples[0], maps[0], bFilterOut[0], joinKey);
-		BloomFilter bFilter1 = new BloomFilter(bTuples[1], maps[1], bFilterOut[1], joinKey);
-		BloomFilter bFilter2 = new BloomFilter(bTuples[2], maps[2], bFilterOut[2], joinKey);
-		BloomFilter bFilter3 = new BloomFilter(bTuples[3], maps[3], bFilterOut[3], joinKey);
+		BloomFilter bFilter0 = new BloomFilter(bTuplesToBFilter[0], mapsToBFilter[0], bFilterToMerge[0], joinKey);
+		BloomFilter bFilter1 = new BloomFilter(bTuplesToBFilter[1], mapsToBFilter[1], bFilterToMerge[1], joinKey);
+		BloomFilter bFilter2 = new BloomFilter(bTuplesToBFilter[2], mapsToBFilter[2], bFilterToMerge[2], joinKey);
+		BloomFilter bFilter3 = new BloomFilter(bTuplesToBFilter[3], mapsToBFilter[3], bFilterToMerge[3], joinKey);
 		
-		Merge merge = new Merge(bFilterOut[0], bFilterOut[1], bFilterOut[2], bFilterOut[3], bOut);
-		
-		
+		Merge merge = new Merge(bFilterToMerge[0], bFilterToMerge[1], bFilterToMerge[2], bFilterToMerge[3], bTuplesOut);
 	}
 
 }
