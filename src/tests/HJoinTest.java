@@ -14,13 +14,13 @@ public class HJoinTest {
 
 	@Test
 	public void jointest() throws Exception {
-	   Utility.redirectStdOut("outputFiles/hJoinOut");
-	   join("tables/parts.txt", "tables/odetails.txt", 0, 1);
+	   Utility.redirectStdOut("outputFiles\\hJoinOut");
+	   join("tables\\parts.txt", "tables\\odetails.txt", 0, 1);
 	   System.out.println();
-	   join("tables/client.txt", "tables/viewing.txt", 0, 0);
+	   join("tables\\client.txt", "tables\\viewing.txt", 0, 0);
 	   System.out.println();
-	   join("tables/orders.txt", "tables/odetails.txt", 0, 0);
-	   Utility.validate("outputFiles/hJoinOut", "correctOutput/hJoinCOutput",true);
+	   join("tables\\orders.txt", "tables\\odetails.txt", 0, 0);
+	   Utility.validate("outputFiles\\hJoinOut", "correctOutput\\hJoinCOutput",true);
 	}
 	
 	public void join(String r1name, String r2name, int jk1, int jk2) throws Exception {

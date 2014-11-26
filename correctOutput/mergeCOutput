@@ -1,4 +1,4 @@
-MERGING : tables/client.txt
+MERGING : tables\client.txt
 
 CLIENTNO              FNAME                 LNAME                 TELNO                 PREFTYPE              MAXRENT               
 
@@ -7,7 +7,7 @@ CR76                  John                  Kay                   0207-774-5632 
 CR62                  Mary                  Tregear               01224-196720          Flat                  600                   
 CR74                  Mike                  Richie                01475-392178          House                 750                   
 -----------------------------
-MERGING : tables/viewing.txt
+MERGING : tables\viewing.txt
 
 CLIENTNO              PROPERTYNO            VIEWDATE              KOMMENT               
 
@@ -17,7 +17,7 @@ CR62                  PA14                  14-MAY-04             no_dining_room
 CR56                  PG4                   26-MAY-04             _                     
 CR56                  PG36                  28-APR-04             _                     
 -----------------------------
-MERGING : tables/orders.txt
+MERGING : tables\orders.txt
 
 ONO                   CNO                   ENO                   RECEIVED              SHIPPED               
 
@@ -26,7 +26,7 @@ ONO                   CNO                   ENO                   RECEIVED      
 1021                  1111                  1000                  12-JAN-95             15-JAN-95             
 1022                  2222                  1001                  13-FEB-95             20-FEB-95             
 -----------------------------
-MERGING : tables/parts.txt
+MERGING : tables\parts.txt
 
 PNO                   PNAME                 QOH                   PRICE                 OLEVEL                
 
@@ -39,7 +39,7 @@ PNO                   PNAME                 QOH                   PRICE         
 10900                 Dr._Zhivago           100                   24.99                 30                    
 10800                 Dirty_Harry           140                   14.99                 30                    
 -----------------------------
-MERGING : tables/odetails.txt
+MERGING : tables\odetails.txt
 
 ONO                   PNO                   QTY                   
 

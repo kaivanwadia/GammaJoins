@@ -1,4 +1,4 @@
-Map Reduce Bloom Tuples : tables/client.txt
+Map Reduce Bloom Tuples : tables\client.txt
 CLIENTNO              FNAME                 LNAME                 TELNO                 PREFTYPE              MAXRENT               
 
 CR56                  Aline                 Stewart               0141-848-1825         Flat                  350                   
@@ -6,7 +6,7 @@ CR76                  John                  Kay                   0207-774-5632 
 CR62                  Mary                  Tregear               01224-196720          Flat                  600                   
 CR74                  Mike                  Richie                01475-392178          House                 750                   
 
-Map Reduce Bloom Tuples : tables/viewing.txt
+Map Reduce Bloom Tuples : tables\viewing.txt
 CLIENTNO              PROPERTYNO            VIEWDATE              KOMMENT               
 
 CR56                  PA14                  24-MAY-04             too_small             
@@ -15,7 +15,7 @@ CR62                  PA14                  14-MAY-04             no_dining_room
 CR56                  PG4                   26-MAY-04             _                     
 CR56                  PG36                  28-APR-04             _                     
 
-Map Reduce Bloom Tuples : tables/orders.txt
+Map Reduce Bloom Tuples : tables\orders.txt
 ONO                   CNO                   ENO                   RECEIVED              SHIPPED               
 
 1023                  3333                  1000                  20-JUN-97             _                     
@@ -23,7 +23,7 @@ ONO                   CNO                   ENO                   RECEIVED      
 1021                  1111                  1000                  12-JAN-95             15-JAN-95             
 1022                  2222                  1001                  13-FEB-95             20-FEB-95             
 
-Map Reduce Bloom Tuples : tables/parts.txt
+Map Reduce Bloom Tuples : tables\parts.txt
 PNO                   PNAME                 QOH                   PRICE                 OLEVEL                
 
 10506                 Land_Before_Time_I    200                   19.99                 20                    
@@ -35,7 +35,7 @@ PNO                   PNAME                 QOH                   PRICE         
 10900                 Dr._Zhivago           100                   24.99                 30                    
 10800                 Dirty_Harry           140                   14.99                 30                    
 
-Map Reduce Bloom Tuples : tables/odetails.txt
+Map Reduce Bloom Tuples : tables\odetails.txt
 ONO                   PNO                   QTY                   
 
 1023                  10800                 1                     

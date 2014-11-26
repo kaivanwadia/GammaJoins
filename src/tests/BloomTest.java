@@ -18,7 +18,7 @@ public class BloomTest {
 	@Test
 	public void bloomTestTupleOut1() throws Exception {
 		ThreadList.init();
-		String fileName = "tables/client.txt";
+		String fileName = "tables\\client.txt";
 		Connector readRToBloom = new Connector("rr1");
 		Connector bloomToPrintTuple = new Connector("bloomTout1");
 		Connector bloomToPrintMap = new Connector("bloomBmapout1");
@@ -26,15 +26,15 @@ public class BloomTest {
 		Bloom bloom1 = new Bloom(readRToBloom, bloomToPrintTuple, bloomToPrintMap, 0);
 		SinkM sinkMap = new SinkM(bloomToPrintMap);
 		Print printTuples = new Print(bloomToPrintTuple);
-		Utility.redirectStdOut("outputFiles/bloomBoxTupleOut");
+		Utility.redirectStdOut("outputFiles\\bloomBoxTupleOut");
 		ThreadList.run(printTuples);
-		Utility.validate("outputFiles/bloomBoxTupleOut", "correctOutput/bloomBoxTupleCOutput", true);
+		Utility.validate("outputFiles\\bloomBoxTupleOut", "correctOutput\\bloomBoxTupleCOutput", true);
 	}
 	
 	@Test
 	public void bloomTestMapOut1() throws Exception {
 		ThreadList.init();
-		String fileName = "tables/client.txt";
+		String fileName = "tables\\client.txt";
 		Connector readRToBloom = new Connector("rr1");
 		Connector bloomToPrintTuple = new Connector("bloomTout1");
 		Connector bloomToPrintMap = new Connector("bloomBmapout1");
@@ -42,8 +42,8 @@ public class BloomTest {
 		Bloom bloom1 = new Bloom(readRToBloom, bloomToPrintTuple, bloomToPrintMap, 0);
 		Sink sinkTuples = new Sink(bloomToPrintTuple); 
 		PrintMap printMap = new PrintMap(bloomToPrintMap);
-		Utility.redirectStdOut("outputFiles/bloomBoxMapOut");
+		Utility.redirectStdOut("outputFiles\\bloomBoxMapOut");
 		ThreadList.run(printMap);
-		Utility.validate("outputFiles/bloomBoxMapOut", "correctOutput/bloomBoxMapCOutput", true);
+		Utility.validate("outputFiles\\bloomBoxMapOut", "correctOutput\\bloomBoxMapCOutput", true);
 	}
 }

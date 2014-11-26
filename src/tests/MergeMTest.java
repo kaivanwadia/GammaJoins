@@ -22,22 +22,22 @@ public class MergeMTest {
 
 	@Test
 	public void mergeMTest1() throws Exception {
-		Utility.redirectStdOut("outputFiles/mergeMOut");
-		System.out.println("MERGING MAP : tables/client.txt on 0");
-		mergeM("tables/client.txt", 0);
+		Utility.redirectStdOut("outputFiles\\mergeMOut");
+		System.out.println("MERGING MAP : tables\\client.txt on 0");
+		mergeM("tables\\client.txt", 0);
 		System.out.println("-----------------------------");
-		System.out.println("MERGING MAP : tables/viewing.txt on 0");
-		mergeM("tables/viewing.txt", 0);
+		System.out.println("MERGING MAP : tables\\viewing.txt on 0");
+		mergeM("tables\\viewing.txt", 0);
 		System.out.println("-----------------------------");
-		System.out.println("MERGING MAP : tables/orders.txt on 0");
-		mergeM("tables/orders.txt", 0);
+		System.out.println("MERGING MAP : tables\\orders.txt on 0");
+		mergeM("tables\\orders.txt", 0);
 		System.out.println("-----------------------------");
-		System.out.println("MERGING MAP : tables/parts.txt on 0");
-		mergeM("tables/parts.txt", 0);
+		System.out.println("MERGING MAP : tables\\parts.txt on 0");
+		mergeM("tables\\parts.txt", 0);
 		System.out.println("-----------------------------");
-		System.out.println("MERGING MAP : tables/odetails.txt on 1");
-		mergeM("tables/odetails.txt", 1);
-		Utility.validate("outputFiles/mergeMOut", "correctOutput/mergeMCOutput",true);
+		System.out.println("MERGING MAP : tables\\odetails.txt on 1");
+		mergeM("tables\\odetails.txt", 1);
+		Utility.validate("outputFiles\\mergeMOut", "correctOutput\\mergeMCOutput",true);
 	}
 	
 	public void mergeM (String fileName, int joinKey) throws Exception {

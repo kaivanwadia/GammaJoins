@@ -22,32 +22,32 @@ public class MapReduceBloomTest {
 
 	@Test
 	public void mapReduceBloomTest1() throws Exception {
-		Utility.redirectStdOut("outputFiles/mapReduceBloomTupOut");
-		mapReduceBloomTuples("tables/client.txt", 0);
+		Utility.redirectStdOut("outputFiles\\mapReduceBloomTupOut");
+		mapReduceBloomTuples("tables\\client.txt", 0);
 		System.out.println();
-		mapReduceBloomTuples("tables/viewing.txt", 0);
+		mapReduceBloomTuples("tables\\viewing.txt", 0);
 		System.out.println();
-		mapReduceBloomTuples("tables/orders.txt", 0);
+		mapReduceBloomTuples("tables\\orders.txt", 0);
 		System.out.println();
-		mapReduceBloomTuples("tables/parts.txt", 0);
+		mapReduceBloomTuples("tables\\parts.txt", 0);
 		System.out.println();
-		mapReduceBloomTuples("tables/odetails.txt", 0);
-		Utility.validate("outputFiles/mapReduceBloomTupOut", "correctOutput/mapReduceBloomTupCOutput", true);
+		mapReduceBloomTuples("tables\\odetails.txt", 0);
+		Utility.validate("outputFiles\\mapReduceBloomTupOut", "correctOutput\\mapReduceBloomTupCOutput", true);
 	}
 	
 	@Test
 	public void mapReduceBloomTest2() throws Exception {
-		Utility.redirectStdOut("outputFiles/mapReduceBloomMapOut");
-		mapReduceBloomMap("tables/client.txt", 0);
+		Utility.redirectStdOut("outputFiles\\mapReduceBloomMapOut");
+		mapReduceBloomMap("tables\\client.txt", 0);
 		System.out.println();
-		mapReduceBloomMap("tables/viewing.txt", 0);
+		mapReduceBloomMap("tables\\viewing.txt", 0);
 		System.out.println();
-		mapReduceBloomMap("tables/orders.txt", 0);
+		mapReduceBloomMap("tables\\orders.txt", 0);
 		System.out.println();
-		mapReduceBloomMap("tables/parts.txt", 0);
+		mapReduceBloomMap("tables\\parts.txt", 0);
 		System.out.println();
-		mapReduceBloomMap("tables/odetails.txt", 0);
-		Utility.validate("outputFiles/mapReduceBloomMapOut", "correctOutput/mapReduceBloomMapCOutput", true);
+		mapReduceBloomMap("tables\\odetails.txt", 0);
+		Utility.validate("outputFiles\\mapReduceBloomMapOut", "correctOutput\\mapReduceBloomMapCOutput", true);
 	}
 	
 	public void mapReduceBloomMap (String fileNameA, int aJoinKey) throws Exception {

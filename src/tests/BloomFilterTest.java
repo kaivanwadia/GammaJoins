@@ -18,12 +18,12 @@ public class BloomFilterTest {
 	@Test
 	public void BloomFilterTest1() throws Exception {
 		Utility.redirectStdOut("outputFiles/bloomFilterOut");
-		bloomFilter("tables/parts.txt", "tables/odetails.txt", 0, 1);
+		bloomFilter("tables\\parts.txt", "tables\\odetails.txt", 0, 1);
 		System.out.println();
-		bloomFilter("tables/client.txt", "tables/viewing.txt", 0, 0);
+		bloomFilter("tables\\client.txt", "tables\\viewing.txt", 0, 0);
 		System.out.println();
-		bloomFilter("tables/orders.txt", "tables/odetails.txt", 0, 0);
-		Utility.validate("outputFiles/bloomFilterOut", "correctOutput/bloomFilterCOutput", true);
+		bloomFilter("tables\\orders.txt", "tables\\odetails.txt", 0, 0);
+		Utility.validate("outputFiles\\bloomFilterOut", "correctOutput\\bloomFilterCOutput", true);
 	}
 	
 	public void bloomFilter(String table1, String table2, int jKeyT1, int jKeyT2) throws Exception {

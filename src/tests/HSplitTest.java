@@ -15,37 +15,37 @@ public class HSplitTest {
 	
 	@Test
 	public void hSplitTest1() throws Exception {
-		Utility.redirectStdOut("outputFiles/hSplitOut");
-		System.out.println("SPLITTING : tables/client.txt");
-		hSplit1("tables/client.txt", 0);
-		hSplit2("tables/client.txt", 0);
-		hSplit3("tables/client.txt", 0);
-		hSplit4("tables/client.txt", 0);
+		Utility.redirectStdOut("outputFiles\\hSplitOut");
+		System.out.println("SPLITTING : tables\\client.txt");
+		hSplit1("tables\\client.txt", 0);
+		hSplit2("tables\\client.txt", 0);
+		hSplit3("tables\\client.txt", 0);
+		hSplit4("tables\\client.txt", 0);
 		System.out.println("--------------------------------");
-		System.out.println("SPLITTING : tables/viewing.txt");
-		hSplit1("tables/viewing.txt", 0);
-		hSplit2("tables/viewing.txt", 0);
-		hSplit3("tables/viewing.txt", 0);
-		hSplit4("tables/viewing.txt", 0);
+		System.out.println("SPLITTING : tables\\viewing.txt");
+		hSplit1("tables\\viewing.txt", 0);
+		hSplit2("tables\\viewing.txt", 0);
+		hSplit3("tables\\viewing.txt", 0);
+		hSplit4("tables\\viewing.txt", 0);
 		System.out.println("--------------------------------");
-		System.out.println("SPLITTING : tables/orders.txt");
-		hSplit1("tables/orders.txt", 0);
-		hSplit2("tables/orders.txt", 0);
-		hSplit3("tables/orders.txt", 0);
-		hSplit4("tables/orders.txt", 0);
+		System.out.println("SPLITTING : tables\\orders.txt");
+		hSplit1("tables\\orders.txt", 0);
+		hSplit2("tables\\orders.txt", 0);
+		hSplit3("tables\\orders.txt", 0);
+		hSplit4("tables\\orders.txt", 0);
 		System.out.println("--------------------------------");
-		System.out.println("SPLITTING : tables/parts.txt");
-		hSplit1("tables/parts.txt", 0);
-		hSplit2("tables/parts.txt", 0);
-		hSplit3("tables/parts.txt", 0);
-		hSplit4("tables/parts.txt", 0);
+		System.out.println("SPLITTING : tables\\parts.txt");
+		hSplit1("tables\\parts.txt", 0);
+		hSplit2("tables\\parts.txt", 0);
+		hSplit3("tables\\parts.txt", 0);
+		hSplit4("tables\\parts.txt", 0);
 		System.out.println("--------------------------------");
-		System.out.println("SPLITTING : tables/odetails.txt");
-		hSplit1("tables/odetails.txt", 0);
-		hSplit2("tables/odetails.txt", 0);
-		hSplit3("tables/odetails.txt", 0);
-		hSplit4("tables/odetails.txt", 0);
-		Utility.validate("outputFiles/hSplitOut", "correctOutput/hSplitCOutput",true);
+		System.out.println("SPLITTING : tables\\odetails.txt");
+		hSplit1("tables\\odetails.txt", 0);
+		hSplit2("tables\\odetails.txt", 0);
+		hSplit3("tables\\odetails.txt", 0);
+		hSplit4("tables\\odetails.txt", 0);
+		Utility.validate("outputFiles\\hSplitOut", "correctOutput\\hSplitCOutput",true);
 	}
 	
 	public void hSplit1(String fileName, int joinKey) throws Exception {

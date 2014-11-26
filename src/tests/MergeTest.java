@@ -17,22 +17,22 @@ public class MergeTest {
 
 	@Test
 	public void mergeTest1() throws Exception {
-		Utility.redirectStdOut("outputFiles/mergeOut");
-		System.out.println("MERGING : tables/client.txt");
-		merge("tables/client.txt", 0);
+		Utility.redirectStdOut("outputFiles\\mergeOut");
+		System.out.println("MERGING : tables\\client.txt");
+		merge("tables\\client.txt", 0);
 		System.out.println("-----------------------------");
-		System.out.println("MERGING : tables/viewing.txt");
-		merge("tables/viewing.txt", 0);
+		System.out.println("MERGING : tables\\viewing.txt");
+		merge("tables\\viewing.txt", 0);
 		System.out.println("-----------------------------");
-		System.out.println("MERGING : tables/orders.txt");
-		merge("tables/orders.txt", 0);
+		System.out.println("MERGING : tables\\orders.txt");
+		merge("tables\\orders.txt", 0);
 		System.out.println("-----------------------------");
-		System.out.println("MERGING : tables/parts.txt");
-		merge("tables/parts.txt", 0);
+		System.out.println("MERGING : tables\\parts.txt");
+		merge("tables\\parts.txt", 0);
 		System.out.println("-----------------------------");
-		System.out.println("MERGING : tables/odetails.txt");
-		merge("tables/odetails.txt", 0);
-		Utility.validate("outputFiles/mergeOut", "correctOutput/mergeCOutput",true);
+		System.out.println("MERGING : tables\\odetails.txt");
+		merge("tables\\odetails.txt", 0);
+		Utility.validate("outputFiles\\mergeOut", "correctOutput\\mergeCOutput",true);
 	}
 	
 	public void merge (String fileName, int joinKey) throws Exception {

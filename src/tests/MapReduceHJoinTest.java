@@ -14,13 +14,13 @@ public class MapReduceHJoinTest {
 
 	@Test
 	public void mapReduceHJoin() throws Exception {
-		Utility.redirectStdOut("outputFiles/mapReduceHJoinOut");
-		mrHJoin("tables/client.txt", "tables/viewing.txt", 0, 0);
+		Utility.redirectStdOut("outputFiles\\mapReduceHJoinOut");
+		mrHJoin("tables\\client.txt", "tables\\viewing.txt", 0, 0);
 		System.out.println();
-		mrHJoin("tables/orders.txt", "tables/odetails.txt", 0, 0);
+		mrHJoin("tables\\orders.txt", "tables\\odetails.txt", 0, 0);
 		System.out.println();
-		mrHJoin("tables/parts.txt", "tables/odetails.txt", 0, 1);
-		Utility.validate("outputFiles/mapReduceHJoinOut", "correctOutput/mapReduceHJoinCOutput", true);
+		mrHJoin("tables\\parts.txt", "tables\\odetails.txt", 0, 1);
+		Utility.validate("outputFiles\\mapReduceHJoinOut", "correctOutput\\mapReduceHJoinCOutput", true);
 	}
 	
 	public void mrHJoin (String fileNameA, String fileNameB, int aJoinKey, int bJoinKey) throws Exception {

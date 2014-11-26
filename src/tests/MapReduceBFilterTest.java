@@ -14,13 +14,13 @@ import basicConnector.Connector;
 public class MapReduceBFilterTest {
 	@Test
 	public void MapReduceBFilterTest() throws Exception {
-		Utility.redirectStdOut("outputFiles/mapReduceBFOut");
-		mapReduceBF("tables/client.txt", "tables/viewing.txt", 0, 0);
+		Utility.redirectStdOut("outputFiles\\mapReduceBFOut");
+		mapReduceBF("tables\\client.txt", "tables\\viewing.txt", 0, 0);
 		System.out.println();
-		mapReduceBF("tables/orders.txt", "tables/odetails.txt", 0, 0);
+		mapReduceBF("tables\\orders.txt", "tables\\odetails.txt", 0, 0);
 		System.out.println();
-		mapReduceBF("tables/parts.txt", "tables/odetails.txt", 0, 1);
-		Utility.validate("outputFiles/mapReduceBFOut", "correctOutput/mapReduceBFCOutput", true);
+		mapReduceBF("tables\\parts.txt", "tables\\odetails.txt", 0, 1);
+		Utility.validate("outputFiles\\mapReduceBFOut", "correctOutput\\mapReduceBFCOutput", true);
 		
 	}
 	

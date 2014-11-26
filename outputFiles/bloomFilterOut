@@ -1,4 +1,4 @@
-Bloom Filter tables/odetails.txt using tables/parts.txt
+Bloom Filter tables\odetails.txt using tables\parts.txt
 
 ONO                   PNO                   QTY                   
 
@@ -12,7 +12,7 @@ ONO                   PNO                   QTY
 1023                  10800                 1                     
 1023                  10900                 1                     
 
-Bloom Filter tables/viewing.txt using tables/client.txt
+Bloom Filter tables\viewing.txt using tables\client.txt
 
 CLIENTNO              PROPERTYNO            VIEWDATE              KOMMENT               
 
@@ -22,7 +22,7 @@ CR56                  PG4                   26-MAY-04             _
 CR62                  PA14                  14-MAY-04             no_dining_room        
 CR56                  PG36                  28-APR-04             _                     
 
-Bloom Filter tables/odetails.txt using tables/orders.txt
+Bloom Filter tables\odetails.txt using tables\orders.txt
 
 ONO                   PNO                   QTY                   
 

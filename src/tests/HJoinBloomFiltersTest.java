@@ -14,13 +14,13 @@ public class HJoinBloomFiltersTest {
 
 	@Test
 	public void HJoinBloomFiltersTest1() throws Exception {
-		Utility.redirectStdOut("outputFiles/hjoinBFOut");
-		HJoin("tables/client.txt", "tables/viewing.txt", 0, 0);
+		Utility.redirectStdOut("outputFiles\\hjoinBFOut");
+		HJoin("tables\\client.txt", "tables\\viewing.txt", 0, 0);
 		System.out.println();
-		HJoin("tables/orders.txt", "tables/odetails.txt", 0, 0);
+		HJoin("tables\\orders.txt", "tables\\odetails.txt", 0, 0);
 		System.out.println();
-		HJoin("tables/parts.txt", "tables/odetails.txt", 0, 1);
-		Utility.validate("outputFiles/hjoinBFOut", "correctOutput/hjoinBFCOutput", true);
+		HJoin("tables\\parts.txt", "tables\\odetails.txt", 0, 1);
+		Utility.validate("outputFiles\\hjoinBFOut", "correctOutput\\hjoinBFCOutput", true);
 		
 	}
 	

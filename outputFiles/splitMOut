@@ -1,108 +1,108 @@
-SPLITTING MAP : tables/client.txt on 0
-Split 1 : tables/client.txt
+SPLITTING MAP : tables\client.txt on 0
+Split 1 : tables\client.txt
 fftffft
 fffffff
 fffffff
 fffffff
-Split 2 : tables/client.txt
+Split 2 : tables\client.txt
 fffffff
 fffffff
 fffffff
 fffffff
-Split 3 : tables/client.txt
+Split 3 : tables\client.txt
 fffffff
 fffffff
 ftfffff
 fffffff
-Split 4 : tables/client.txt
+Split 4 : tables\client.txt
 fffffff
 fffffff
 fffffff
 ftfffff
 --------------------------------
-SPLITTING MAP : tables/viewing.txt on 0
-Split 1 : tables/viewing.txt
+SPLITTING MAP : tables\viewing.txt on 0
+Split 1 : tables\viewing.txt
 fftffff
 fffffff
 fffffff
 fffffff
-Split 2 : tables/viewing.txt
+Split 2 : tables\viewing.txt
 fffffff
 fffffff
 fffffff
 fffffff
-Split 3 : tables/viewing.txt
+Split 3 : tables\viewing.txt
 fffffff
 fffffff
 ftfffff
 fffffff
-Split 4 : tables/viewing.txt
+Split 4 : tables\viewing.txt
 fffffff
 fffffff
 fffffff
 ftfffff
 --------------------------------
-SPLITTING MAP : tables/orders.txt on 0
-Split 1 : tables/orders.txt
+SPLITTING MAP : tables\orders.txt on 0
+Split 1 : tables\orders.txt
 ffftfff
 fffffff
 fffffff
 fffffff
-Split 2 : tables/orders.txt
+Split 2 : tables\orders.txt
 fffffff
 tffffff
 fffffff
 fffffff
-Split 3 : tables/orders.txt
+Split 3 : tables\orders.txt
 fffffff
 fffffff
 ftfffff
 fffffff
-Split 4 : tables/orders.txt
+Split 4 : tables\orders.txt
 fffffff
 fffffff
 fffffff
 fftffff
 --------------------------------
-SPLITTING MAP : tables/parts.txt on 0
-Split 1 : tables/parts.txt
+SPLITTING MAP : tables\parts.txt on 0
+Split 1 : tables\parts.txt
 ftfftff
 fffffff
 fffffff
 fffffff
-Split 2 : tables/parts.txt
+Split 2 : tables\parts.txt
 fffffff
 ffftttf
 fffffff
 fffffff
-Split 3 : tables/parts.txt
+Split 3 : tables\parts.txt
 fffffff
 fffffff
 fffffft
 fffffff
-Split 4 : tables/parts.txt
+Split 4 : tables\parts.txt
 fffffff
 fffffff
 fffffff
 tffffff
 --------------------------------
-SPLITTING MAP : tables/odetails.txt on 1
-Split 1 : tables/odetails.txt
+SPLITTING MAP : tables\odetails.txt on 1
+Split 1 : tables\odetails.txt
 ffftfff
 fffffff
 fffffff
 fffffff
-Split 2 : tables/odetails.txt
+Split 2 : tables\odetails.txt
 fffffff
 tffffff
 fffffff
 fffffff
-Split 3 : tables/odetails.txt
+Split 3 : tables\odetails.txt
 fffffff
 fffffff
 ftfffff
 fffffff
-Split 4 : tables/odetails.txt
+Split 4 : tables\odetails.txt
 fffffff
 fffffff
 fffffff

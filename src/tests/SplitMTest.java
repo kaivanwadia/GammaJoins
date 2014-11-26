@@ -18,37 +18,37 @@ public class SplitMTest {
 
 	@Test
 	public void splitMTest1() throws Exception {
-		Utility.redirectStdOut("outputFiles/splitMOut");
-		System.out.println("SPLITTING MAP : tables/client.txt on 0");
-		splitMap1("tables/client.txt", 0);
-		splitMap2("tables/client.txt", 0);
-		splitMap3("tables/client.txt", 0);
-		splitMap4("tables/client.txt", 0);
+		Utility.redirectStdOut("outputFiles\\splitMOut");
+		System.out.println("SPLITTING MAP : tables\\client.txt on 0");
+		splitMap1("tables\\client.txt", 0);
+		splitMap2("tables\\client.txt", 0);
+		splitMap3("tables\\client.txt", 0);
+		splitMap4("tables\\client.txt", 0);
 		System.out.println("--------------------------------");
-		System.out.println("SPLITTING MAP : tables/viewing.txt on 0");
-		splitMap1("tables/viewing.txt", 0);
-		splitMap2("tables/viewing.txt", 0);
-		splitMap3("tables/viewing.txt", 0);
-		splitMap4("tables/viewing.txt", 0);
+		System.out.println("SPLITTING MAP : tables\\viewing.txt on 0");
+		splitMap1("tables\\viewing.txt", 0);
+		splitMap2("tables\\viewing.txt", 0);
+		splitMap3("tables\\viewing.txt", 0);
+		splitMap4("tables\\viewing.txt", 0);
 		System.out.println("--------------------------------");
-		System.out.println("SPLITTING MAP : tables/orders.txt on 0");
-		splitMap1("tables/orders.txt", 0);
-		splitMap2("tables/orders.txt", 0);
-		splitMap3("tables/orders.txt", 0);
-		splitMap4("tables/orders.txt", 0);
+		System.out.println("SPLITTING MAP : tables\\orders.txt on 0");
+		splitMap1("tables\\orders.txt", 0);
+		splitMap2("tables\\orders.txt", 0);
+		splitMap3("tables\\orders.txt", 0);
+		splitMap4("tables\\orders.txt", 0);
 		System.out.println("--------------------------------");
-		System.out.println("SPLITTING MAP : tables/parts.txt on 0");
-		splitMap1("tables/parts.txt", 0);
-		splitMap2("tables/parts.txt", 0);
-		splitMap3("tables/parts.txt", 0);
-		splitMap4("tables/parts.txt", 0);
+		System.out.println("SPLITTING MAP : tables\\parts.txt on 0");
+		splitMap1("tables\\parts.txt", 0);
+		splitMap2("tables\\parts.txt", 0);
+		splitMap3("tables\\parts.txt", 0);
+		splitMap4("tables\\parts.txt", 0);
 		System.out.println("--------------------------------");
-		System.out.println("SPLITTING MAP : tables/odetails.txt on 1");
-		splitMap1("tables/odetails.txt", 1);
-		splitMap2("tables/odetails.txt", 1);
-		splitMap3("tables/odetails.txt", 1);
-		splitMap4("tables/odetails.txt", 1);
-		Utility.validate("outputFiles/splitMOut", "correctOutput/splitMCOutput", true);
+		System.out.println("SPLITTING MAP : tables\\odetails.txt on 1");
+		splitMap1("tables\\odetails.txt", 1);
+		splitMap2("tables\\odetails.txt", 1);
+		splitMap3("tables\\odetails.txt", 1);
+		splitMap4("tables\\odetails.txt", 1);
+		Utility.validate("outputFiles\\splitMOut", "correctOutput\\splitMCOutput", true);
 	}
 	
 	public void splitMap1 (String fileName, int joinKey) throws Exception {

@@ -1,28 +1,28 @@
-Map Reduce Bloom Map : tables/client.txt
+Map Reduce Bloom Map : tables\client.txt
 fftffft
 fffffff
 ftfffff
 ftfffff
 
-Map Reduce Bloom Map : tables/viewing.txt
+Map Reduce Bloom Map : tables\viewing.txt
 fftffff
 fffffff
 ftfffff
 ftfffff
 
-Map Reduce Bloom Map : tables/orders.txt
+Map Reduce Bloom Map : tables\orders.txt
 ffftfff
 tffffff
 ftfffff
 fftffff
 
-Map Reduce Bloom Map : tables/parts.txt
+Map Reduce Bloom Map : tables\parts.txt
 ftfftff
 ffftttf
 fffffft
 tffffff
 
-Map Reduce Bloom Map : tables/odetails.txt
+Map Reduce Bloom Map : tables\odetails.txt
 ffftfff
 tffffff
 ftfffff
