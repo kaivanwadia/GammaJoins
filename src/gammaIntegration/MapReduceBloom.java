@@ -8,9 +8,9 @@ import gammajoins.Merge;
 import gammajoins.MergeM;
 import basicConnector.Connector;
 
-public class HJoinRefineWithBloomFilters extends ArrayConnectors{
+public class MapReduceBloom extends ArrayConnectors{
 	
-	public HJoinRefineWithBloomFilters(Connector in1, int joinKey, Connector mergeOut, Connector mmergeOut){
+	public MapReduceBloom(Connector in1, int joinKey, Connector mergeOut, Connector mmergeOut){
 		
 		Connector[] outs = ArrayConnectors.initConnectorArray("out");
 		Connector[] bloomT = ArrayConnectors.initConnectorArray("bloomT");
