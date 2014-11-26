@@ -1,19 +1,24 @@
 package gammajoins;
 
-import gammaIntegration.MapReduceBloom;
+import gammaIntegration.HJoinBloomFilters;
+import gammaSupport.Relation;
 import gammaSupport.ThreadList;
 import basicConnector.Connector;
 
 public class Main {
 	public static void main(String args[]) throws Exception {
-		String fileName = "tables/client.txt";
-		int joinKey = 0;
+		String fileNameA = "tables/client.txt";
+		String fileNameB = "tables/viewing.txt";
+		int joinKeyA = 0;
+		int joinKeyB = 0;
 		ThreadList.init();
-		Connector readIn = new Connector("readRtoBloom");
-		Connector mergeOut = new Connector("bloomMergeOut");
-		Connector mmergeOut = new Connector("bloomMMergeOut");
-		ReadRelation rRelation = new ReadRelation(fileName, readIn);
-		MapReduceBloom hjf = new MapReduceBloom(readIn, joinKey, mergeOut, mmergeOut); 
+		Connector readInA = new Connector("readRtoBloomA");
+		Connector readInB = new Connector("readRtoBloomB");
+		Connector output = new Connector("output");
+		ReadRelation rRelationA = new ReadRelation(fileNameA, readInA);
+		ReadRelation rRelationB = new ReadRelation(fileNameB, readInB);
+		HJoinBloomFilters hJoinBF = new HJoinBloomFilters(readInA, readInB, output, joinKeyA, joinKeyB);
+		
 		
 //		Connector readRToBloom = new Connector("readRToBloom");
 //		Connector bloomToSinkTuple = new Connector("bloomToSinkTuple");
@@ -28,8 +33,8 @@ public class Main {
 //		SplitM splitM = new SplitM(bloomToSplitMap, splitMToMerge1, splitMToMerge2, splitMToMerge3, splitMToMerge4);
 //		MergeM mergeM = new MergeM(splitMToMerge1, splitMToMerge2, splitMToMerge3, splitMToMerge4, mergeMToPrint);
 //		Sink sinkTuples = new Sink(bloomToSinkTuple);
-		PrintMap printMap = new PrintMap(mmergeOut);
-		Print print = new Print(mergeOut);
+//		PrintMap printMap = new PrintMap(output);
+		Print print = new Print(output);
 		ThreadList.run(print);
 	}
 }
