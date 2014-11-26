@@ -20,7 +20,7 @@ public class Print extends Thread {
 		try{
 			Relation relation = input.getRelation();
 			Tuple tuple = input.getNextTuple();
-			int spaces =22;
+			int spaces = 22;
 			String[] fields = relation.getFieldNames();
 			for(int i = 0; i < fields.length; i++){
 				int numSpaces = spaces - fields[i].length();
